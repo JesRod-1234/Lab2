@@ -45,5 +45,18 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    @DisplayName(" Allow more numbers ")
+    void TestMoreNumbers(){
+
+        StringCalculator calculator = new StringCalculator();
+
+        String numbers = "1,2,3,4";
+        int actual = 0;
+        int expected = 10;
+        actual = calculator.add(numbers);
+
+        assertEquals(expected, actual);
+    }
 
 }
