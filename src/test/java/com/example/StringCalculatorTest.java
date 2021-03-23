@@ -58,5 +58,20 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    @DisplayName(" Allow more signs ")
+    void TestaddNumbersWithTwoDelimeters() {
+
+        StringCalculator calculator = new StringCalculator();
+
+        String numbers = "1\n2,3";
+        int actual = 0;
+        int expected = 6;
+        actual = calculator.add(numbers);
+
+        assertEquals(expected, actual);
+
+    }
+
 
 }
