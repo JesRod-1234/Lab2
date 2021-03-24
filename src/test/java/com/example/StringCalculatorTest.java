@@ -72,6 +72,21 @@ class StringCalculatorTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    @DisplayName(" Add more delimeters signs")
+    void TestAddMoreDelimeters() {
+
+        StringCalculator calculator = new StringCalculator();
+
+        String numbers = "//;\n1;2";
+        int actual = 0;
+        int expected = 3;
+        actual = calculator.add(numbers);
+
+        assertEquals(expected, actual);
+
+    }
+
 
 
 }
