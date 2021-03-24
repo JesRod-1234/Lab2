@@ -3,13 +3,15 @@ package com.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringCalculatorTest {
 
     @Test
     @DisplayName(" Return 0 på tom sträng")
-    void methodAddTest(){
+    void methodAddTest() {
 
         StringCalculator calculator = new StringCalculator();
         String numbers = "";
@@ -19,9 +21,10 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     @DisplayName(" Return number from String")
-    void TestSendStringOneNumber(){
+    void TestSendStringOneNumber() {
 
         StringCalculator calculator = new StringCalculator();
 
@@ -32,9 +35,10 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     @DisplayName(" Send in two numbers ")
-    void TestAddTwoNumbers(){
+    void TestAddTwoNumbers() {
 
         StringCalculator calculator = new StringCalculator();
 
@@ -45,9 +49,10 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     @DisplayName(" Allow more numbers ")
-    void TestMoreNumbers(){
+    void TestMoreNumbers() {
 
         StringCalculator calculator = new StringCalculator();
 
@@ -58,6 +63,7 @@ class StringCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     @DisplayName(" Allow more signs ")
     void TestaddNumbersWithTwoDelimeters() {
@@ -72,6 +78,7 @@ class StringCalculatorTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     @DisplayName(" Add more delimeters signs")
     void TestAddMoreDelimeters() {
@@ -87,6 +94,21 @@ class StringCalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Negative numbers exception")
+    void testNegativeNumber() {
 
+        StringCalculator calculator = new StringCalculator();
+
+
+        String numbers = "-8,-12,12";
+
+
+        String expected = "negatives not allowed:[-8,-12]";
+
+        assertThatExceptionOfType(RuntimeException.class).isThrownBy(() -> calculator.add(numbers)).withMessage("negatives numbers not allowed!:[-8, -12]");
+
+
+    }
 
 }
