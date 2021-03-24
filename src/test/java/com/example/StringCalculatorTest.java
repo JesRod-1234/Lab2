@@ -130,5 +130,26 @@ class StringCalculatorTest {
 
 
     }
+
+    @Test
+    @DisplayName("Delimeters can be of any format ")
+    void delimetersAnyLenght() {
+
+        StringCalculator calculator = new StringCalculator();
+
+
+        String numbers = "//[***]\n1***2***3";
+
+        int actual = 0;
+
+        int expected = 6;
+
+        actual = calculator.add(numbers);
+
+        assertEquals(expected, actual);
+
+
+    }
+
 }
 
