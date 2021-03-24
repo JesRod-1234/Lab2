@@ -23,9 +23,10 @@ public class StringCalculator {
                 int sumOfNumbers = 0;
 
                 for (var numberarray : numbersArray) {
-                    if (Integer.parseInt(numberarray) > 0)
+                    if (Integer.parseInt(numberarray) > 0 && (Integer.parseInt(numberarray) <= 1000))
                         sumOfNumbers += Integer.parseInt(numberarray);
-                    else
+
+                    else if ( Integer.parseInt(numberarray)< 0)
                         negativeNumberList.add(numberarray);
 
                 }

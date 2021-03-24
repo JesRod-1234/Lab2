@@ -111,4 +111,24 @@ class StringCalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Number less than thousand should be ignored")
+    void testNumbersAbove1000() {
+
+        StringCalculator calculator = new StringCalculator();
+
+
+        String numbers = "2,1001";
+
+        int actual = 0;
+
+        int expected = 2;
+
+        actual = calculator.add(numbers);
+
+        assertEquals(expected, actual);
+
+
+    }
 }
+
