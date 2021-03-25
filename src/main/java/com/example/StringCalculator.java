@@ -24,7 +24,8 @@ public class StringCalculator {
                         newDelimeter = numbers.substring(numbers.indexOf('[') + 1, numbers.indexOf(']'));
                         numbers = numbers.replace(newDelimeter.trim(), ",");
                         numbers = numbers.substring(numbers.indexOf(']') + 1);
-                        numbers = numbers.substring(numbers.indexOf("n") + 2);
+                        numbers = numbers.substring(numbers.indexOf("\n") + 1);
+
 
                     } else
 
