@@ -150,25 +150,6 @@ class StringCalculatorTest {
 
 
     }
-    @Test
-    @DisplayName("Allow multiple delimeters ")
-    void multipleDelimeters() {
-
-        StringCalculator calculator = new StringCalculator();
-
-
-        String numbers = "//[*][%]\n1*2%3";
-
-        int actual = 0;
-
-        int expected = 6;
-
-        actual = calculator.add(numbers);
-
-        assertEquals(expected, actual);
-
-
-    }
 
 
 }
